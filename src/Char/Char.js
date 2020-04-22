@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+//import Radium from 'radium';
 
 const char = (props) => {
     const style = {
@@ -17,4 +17,4 @@ const char = (props) => {
         );
     };
     
-    export default Radium(char);
+    export default char;

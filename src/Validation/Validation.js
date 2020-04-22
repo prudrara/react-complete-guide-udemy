@@ -1,6 +1,6 @@
 import React from 'react';
 import './Validation.css';
-import Radium from 'radium';
+//import Radium from 'radium';
 
 const validation = (props) => {
     let validationMsg = 'Text long enough';
@@ -15,4 +15,4 @@ const validation = (props) => {
     )
     }
 
-export default Radium(validation);
+export default validation;

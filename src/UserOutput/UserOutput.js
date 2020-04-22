@@ -1,5 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
+//import Radium from 'radium';
 import './UserOutput.css';
 
 const userOutput = (props) => {
@@ -12,4 +12,4 @@ return (
 )
 }
 
-export default Radium(userOutput);
+export default userOutput;

@@ -6,7 +6,21 @@ import Person from './Person/Person';
 // import UserInput from './UserInput/UserInput';
 import Validation from './Validation/Validation';
 import Char from './Char/Char';
-import Radium, {StyleRoot} from 'radium';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  background-color: ${props => props.alt ? 'red' : 'green'};
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${props => props.alt ? 'salmon' : 'lightgreen'};
+    color: black;
+  }
+`;
 
 class App extends Component {
   state = {
@@ -102,19 +116,19 @@ class App extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: 'green',
-      color: 'white',
-      font:'inherit',
-      border: '1px solid blue',
-      padding: '8px',
-      cursor: 'pointer',
-      ':hover' : {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
+    // const style = {
+    //   backgroundColor: 'green',
+    //   color: 'white',
+    //   font:'inherit',
+    //   border: '1px solid blue',
+    //   padding: '8px',
+    //   cursor: 'pointer',
+      // ':hover' : {
+      //   backgroundColor: 'lightgreen',
+      //   color: 'black'
+      // }
 
-    }
+    // }
 
    let persons = null;
    if ( this.state.showPersons ) {
@@ -131,12 +145,12 @@ class App extends Component {
       </div>
     );
 
-     style.backgroundColor= 'red';
+    // style.backgroundColor= 'red';
 
-     style[':hover'] = {
-      backgroundColor: 'salmon',
-      color: 'black'
-    }
+    //  style[':hover'] = {
+    //   backgroundColor: 'salmon',
+    //   color: 'black'
+    // }
   }
 
   //let classes = ['red', 'bold'].join('');
@@ -157,13 +171,13 @@ class App extends Component {
       />;
   });
     return (
-      <StyleRoot>
+     // <StyleRoot>
       <div className="App">
         <h1> THis is Praneeth</h1>
         <p className={classes.join(' ')}> Hello , this is React </p>
-        <button 
-        style = {style}
-        onClick={this.togglePersonHandler}> Toggle Persons </button>
+        <StyledButton alt={this.state.showPersons}
+      //  style = {style}
+        onClick={this.togglePersonHandler}> Toggle Persons </StyledButton>
         {persons}  
 
         <input
@@ -174,10 +188,10 @@ class App extends Component {
         <Validation inputLength={this.state.userInput.length} />
         {charList}
       </div>
-      </StyleRoot>
+    //  </StyleRoot>
     );
     // React.createElement('div', {className:'App'}, React.createElement('h1',null,'hello'));
   }
 }
 
-export default Radium(App);
+export default App;
